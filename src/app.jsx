@@ -1,7 +1,7 @@
 import React from 'react';
-import {Route} from "react-router-dom";
+import { Route } from 'react-router-dom';
 
-import {Home} from 'pages/Home/Home';
+import { Home } from 'pages/Home/Home';
 
 
 export class App extends React.Component {
@@ -10,6 +10,6 @@ export class App extends React.Component {
       <div>
         <Route path="/home" component={Home} />
       </div>
-    )
+    );
   }
 }
