@@ -6,6 +6,7 @@ module.exports = {
 
   entry: [
     'babel-polyfill',
+    './index.js'
   ],
 
   output: {
