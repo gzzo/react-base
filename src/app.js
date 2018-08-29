@@ -5,6 +5,8 @@ import { Helmet } from "react-helmet";
 
 import Home from 'pages/home'
 
+import css from 'sanitize.css'
+
 class App extends React.Component {
   render() {
     return (
