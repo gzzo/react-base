@@ -1,12 +1,12 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import { hot } from 'react-hot-loader'
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet'
 import { ConnectedRouter } from 'connected-react-router'
 
 import Home from 'pages/home'
 
-import css from 'sanitize.css'
+import 'sanitize.css'
 
 class App extends React.Component {
   render() {
@@ -15,8 +15,14 @@ class App extends React.Component {
         <div>
           <Helmet>
             <title>Hello</title>
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1"
+            />
           </Helmet>
-          <Route path="/" component={Home} />
+          <Switch>
+            <Route path="/" component={Home} />
+          </Switch>
         </div>
       </ConnectedRouter>
     )
