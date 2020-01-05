@@ -60,6 +60,20 @@ module.exports = {
         'import/no-duplicates': 'error',
         'import/no-extraneous-dependencies': 'error',
         'import/no-unresolved': 'off',
+        'import/order': [
+            'error',
+            {
+                'newlines-between': 'always-and-inside-groups',
+                groups: [
+                    'builtin',
+                    'external',
+                    'internal',
+                    'parent',
+                    'sibling',
+                    'index',
+                ],
+            },
+        ],
 
         // https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
         'react/jsx-boolean-value': 'error',
