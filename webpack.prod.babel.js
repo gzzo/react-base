@@ -10,7 +10,7 @@ export default merge(common, {
   devtool: 'source-map',
 
   module: {
-    rules: getRules('production'),
+    rules: getRules(),
   },
 
   plugins: [

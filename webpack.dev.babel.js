@@ -20,7 +20,7 @@ export default merge(common, {
   },
 
   module: {
-    rules: getRules('development'),
+    rules: getRules(),
   },
 
   plugins: [

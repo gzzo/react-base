@@ -6,7 +6,7 @@ import InlineSourcePlugin from 'html-webpack-inline-source-plugin'
 export default {
   context: path.resolve(__dirname, 'src'),
 
-  entry: ['@babel/polyfill', 'whatwg-fetch', './index.js'],
+  entry: ['whatwg-fetch', './index.js'],
 
   output: {
     filename: '[name].[contenthash].js',
