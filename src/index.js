@@ -2,11 +2,12 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
-import { reducers, rootSaga } from 'reducers'
-import { connectRouter, routerMiddleware } from 'connected-react-router'
+import { routerMiddleware } from 'connected-react-router'
 import createSagaMiddleware from 'redux-saga'
 import { createBrowserHistory } from 'history'
 import { composeWithDevTools } from 'redux-devtools-extension'
+
+import { reducers, rootSaga } from 'reducers'
 
 import App from './app'
 
@@ -33,7 +34,7 @@ const render = () => {
 if (module.hot) {
   module.hot.accept('app', render)
   module.hot.accept('reducers', () => {
-    store.replaceReducer(connectRouter(history)(reducers))
+    store.replaceReducer(reducers(history))
   })
 }
 
