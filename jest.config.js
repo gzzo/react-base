@@ -1,10 +1,10 @@
 module.exports = {
   moduleDirectories: ['src', 'node_modules'],
-  moduleFileExtensions: ['js', 'jsx'],
+  moduleFileExtensions: ['js', 'tsx'],
   moduleNameMapper: {
     '\\.s?css$': 'identity-obj-proxy',
   },
-  setupTestFrameworkScriptFile: '<rootDir>/enzyme.js',
+  setupFilesAfterEnv: ['<rootDir>/enzyme.js'],
   setupFiles: ['<rootDir>/jsdom.setup.js'],
   globals: {
     DEBUG: false,
