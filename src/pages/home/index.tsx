@@ -3,7 +3,7 @@ import React from 'react'
 import Page from 'components/page'
 
 class Home extends React.Component {
-  render() {
+  render(): React.ReactNode {
     return <Page>Home</Page>
   }
 }

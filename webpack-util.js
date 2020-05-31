@@ -2,13 +2,18 @@ import path from 'path'
 
 export const getRules = () => [
   {
-    test: /\.jsx?$/,
+    test: /\.tsx?$/,
     exclude: {
       test: /node_modules/,
     },
     use: {
-      loader: 'babel-loader',
+      loader: 'ts-loader',
     },
+  },
+  {
+    enforce: 'pre',
+    test: /\.js$/,
+    loader: 'source-map-loader',
   },
   {
     test: /\.s?css$/,

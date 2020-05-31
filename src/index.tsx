@@ -22,7 +22,7 @@ const store = createStore(
 )
 sagaMiddleware.run(rootSaga)
 
-const render = () => {
+const render = (): void => {
   ReactDOM.render(
     <Provider store={store}>
       <App history={history} />

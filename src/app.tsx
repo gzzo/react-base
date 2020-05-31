@@ -6,9 +6,11 @@ import { ConnectedRouter } from 'connected-react-router'
 
 import Home from 'pages/home'
 
+import { AppProps } from './app.d'
+
 import 'sanitize.css'
 
-class App extends React.Component {
+class App extends React.Component<AppProps> {
   render() {
     return (
       <ConnectedRouter history={this.props.history}>
