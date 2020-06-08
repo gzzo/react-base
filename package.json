@@ -94,7 +94,7 @@
     "analyze": "webpack-bundle-analyzer stats.json dist",
     "build": "webpack --config webpack.prod.babel.js",
     "debug": "node --inspect --inspect-brk node_modules/webpack-dev-server/bin/webpack-dev-server --config webpack.dev.babel.js",
-    "lint": "eslint --ext .ts --ext .tsx --ext .js *ts src/",
+    "lint": "eslint --ext .ts --ext .tsx --ext .js *.ts *.js src/",
     "pretty": "prettier --write 'src/**/*.tsx' *.ts",
     "profile": "webpack --profile --config webpack.prod.babel.js --progress --json > stats.json",
     "start": "webpack-dev-server --progress --config webpack.dev.babel.js --host 0.0.0.0 --env.debug=true",

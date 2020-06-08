@@ -17,3 +17,5 @@ export const reducers = (history: History): Reducer =>
     sampleReducer,
     router: connectRouter(history),
   })
+
+export type RootState = ReturnType<ReturnType<typeof reducers>>

@@ -2,10 +2,10 @@ import React from 'react'
 
 import css from './index.scss'
 
-class Page extends React.Component {
-  render(): React.ReactNode {
-    return <div className={css.page}>{this.props.children}</div>
-  }
+type PageProps = {
+  children: React.ReactNode
 }
 
-export default Page
+export default function Page({ children }: PageProps): React.ReactElement {
+  return <div className={css.page}>{children}</div>
+}
