@@ -60,5 +60,6 @@ module.exports = {
         tsx: 'never',
       },
     ],
+    'import/no-extraneous-dependencies': 'off',
   },
 }
