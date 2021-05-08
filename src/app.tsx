@@ -1,21 +1,14 @@
 import React from 'react'
-import { Route, Switch } from 'react-router-dom'
-import { hot } from 'react-hot-loader/root'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
-import { ConnectedRouter } from 'connected-react-router'
-import { History } from 'history'
 
 import Home from 'pages/home'
 
 import 'sanitize.css'
 
-type AppProps = {
-  history: History
-}
-
-function App({ history }: AppProps): React.ReactElement {
+function App(): React.ReactElement {
   return (
-    <ConnectedRouter history={history}>
+    <BrowserRouter>
       <div>
         <Helmet>
           <title>Hello</title>
@@ -25,8 +18,8 @@ function App({ history }: AppProps): React.ReactElement {
           <Route path="/" component={Home} />
         </Switch>
       </div>
-    </ConnectedRouter>
+    </BrowserRouter>
   )
 }
 
-export default hot(App)
+export default App
