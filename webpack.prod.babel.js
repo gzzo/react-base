@@ -1,7 +1,7 @@
 import webpack from 'webpack'
 import merge from 'webpack-merge'
 
-import { getRules } from 'webpack.util.babel'
+import { getRules } from './webpack.util.babel'
 import common from './webpack.common.babel'
 
 export default merge(common, {

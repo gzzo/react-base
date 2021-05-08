@@ -1,14 +1,17 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
+
   extends: [
     'airbnb',
     'airbnb/hooks',
     'prettier',
     'plugin:@typescript-eslint/recommended',
   ],
+
   globals: {
     DEBUG: false,
   },
+
   parserOptions: {
     ecmaVersion: 6,
     sourceType: 'module',
@@ -16,6 +19,7 @@ module.exports = {
       jsx: true,
     },
   },
+
   env: {
     browser: true,
     node: true,
@@ -23,19 +27,6 @@ module.exports = {
     es6: true,
   },
   plugins: ['@typescript-eslint'],
-  // settings: {
-  //   "import/resolver": {
-  //     webpack: {
-  //       config: {
-  //         extensions:['.js', '.ts', '.tsx', '.scss'],
-  //         modules: [
-  //           path.resolve(__dirname, 'src'),
-  //           path.resolve(__dirname, 'node_modules'),
-  //         ],
-  //       }
-  //     }
-  //   }
-  // },
 
   settings: {
     'import/resolver': {
@@ -45,6 +36,7 @@ module.exports = {
       },
     },
   },
+
   rules: {
     // note you must disable the base rule as it can report incorrect errors
     'no-use-before-define': 'off',
@@ -62,4 +54,13 @@ module.exports = {
     ],
     'import/no-extraneous-dependencies': 'off',
   },
+
+  overrides: [
+    {
+      files: ['*.js'],
+      rules: {
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
+      },
+    },
+  ],
 }
