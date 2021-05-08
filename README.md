@@ -1,6 +1,6 @@
 # What is this?
 
-A React starter project based on React 17, React Router v4, Webpack 5, Redux, and Redux-Saga.
+A React starter project based on React 17, React Router v5, Webpack 5, Redux, and Redux-Saga.
 
 # Installation
 
