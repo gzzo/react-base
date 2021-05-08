@@ -1,7 +1,5 @@
-import { combineReducers, Reducer } from 'redux'
-import { connectRouter } from 'connected-react-router'
+import { combineReducers } from 'redux'
 import { all } from 'redux-saga/effects'
-import { History } from 'history'
 
 const sampleReducer = (state = {}) => state
 
@@ -12,10 +10,8 @@ export function* rootSaga(): Generator {
   yield all([sampleRootSaga()])
 }
 
-export const reducers = (history: History): Reducer =>
-  combineReducers({
-    sampleReducer,
-    router: connectRouter(history),
-  })
+export const reducers = combineReducers({
+  sampleReducer,
+})
 
-export type RootState = ReturnType<ReturnType<typeof reducers>>
+export type RootState = ReturnType<typeof reducers>

@@ -1,11 +1,10 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
   extends: [
-    'eslint:recommended',
-    'plugin:react/recommended',
+    'airbnb',
+    'airbnb/hooks',
+    'prettier',
     'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
-    'plugin:import/recommended',
   ],
   globals: {
     DEBUG: false,
@@ -23,73 +22,44 @@ module.exports = {
     jest: true,
     es6: true,
   },
-  plugins: ['import'],
+  plugins: ['@typescript-eslint'],
+  // settings: {
+  //   "import/resolver": {
+  //     webpack: {
+  //       config: {
+  //         extensions:['.js', '.ts', '.tsx', '.scss'],
+  //         modules: [
+  //           path.resolve(__dirname, 'src'),
+  //           path.resolve(__dirname, 'node_modules'),
+  //         ],
+  //       }
+  //     }
+  //   }
+  // },
+
   settings: {
-    react: {
-      version: '16.0',
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        moduleDirectory: ['node_modules', 'src/'],
+      },
     },
   },
   rules: {
-    'block-spacing': 'error',
-    'consistent-return': 'error',
-    eqeqeq: 'error',
-    'func-names': 'error',
-    'lines-between-class-members': 'error',
-    'no-else-return': 'error',
-    'no-eval': 'error',
-    'no-implicit-coercion': 'error',
-    'no-implicit-globals': 'error',
-    'no-implied-eval': 'error',
-    'no-param-reassign': 'error',
-    'object-shorthand': 'error',
-    'prefer-arrow-callback': 'error',
-    'prefer-const': 'error',
-    'prefer-template': 'error',
+    // note you must disable the base rule as it can report incorrect errors
+    'no-use-before-define': 'off',
+    '@typescript-eslint/no-use-before-define': ['error'],
 
-    // https://eslint.org/docs/rules/no-unused-vars#ignorerestsiblings
-    'no-unused-vars': [
-      'error',
+    'react/jsx-filename-extension': [
+      2,
+      { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
+    ],
+    'import/extensions': [
+      2,
       {
-        ignoreRestSiblings: true,
-        argsIgnorePattern: '^_',
+        tsx: 'never',
       },
     ],
-
-    '@typescript-eslint/no-unused-vars': [
-      'error',
-      {
-        ignoreRestSiblings: true,
-        argsIgnorePattern: '^_',
-      },
-    ],
-
-    // https://github.com/benmosher/eslint-plugin-import
-    'import/first': 'error',
-    'import/no-duplicates': 'error',
-    'import/no-extraneous-dependencies': 'error',
-    'import/no-unresolved': 'off',
-    'import/order': [
-      'error',
-      {
-        'newlines-between': 'always-and-inside-groups',
-        groups: [
-          'builtin',
-          'external',
-          'internal',
-          'parent',
-          'sibling',
-          'index',
-        ],
-      },
-    ],
-
-    // https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
-    'react/jsx-boolean-value': 'error',
-    'react/jsx-curly-brace-presence': 'error',
-    'react/no-access-state-in-setstate': 'error',
-    'react/prop-types': 'off',
-    'react/sort-comp': 'error',
-    'react/style-prop-object': 'error',
-    'react/no-deprecated': 'error',
+    'import/no-extraneous-dependencies': 'off',
   },
 }

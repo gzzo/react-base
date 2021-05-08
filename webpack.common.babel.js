@@ -2,12 +2,12 @@ import path from 'path'
 
 import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
-import InlineSourcePlugin from 'html-webpack-inline-source-plugin'
+import ReactRefreshPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 
 export default {
   context: path.resolve(__dirname, 'src'),
 
-  entry: ['react-hot-loader/patch', 'whatwg-fetch', './index.tsx'],
+  entry: ['./index.tsx'],
 
   output: {
     filename: '[name].[contenthash].js',
@@ -15,28 +15,12 @@ export default {
     publicPath: '/',
   },
 
-  optimization: {
-    runtimeChunk: 'single',
-    splitChunks: {
-      cacheGroups: {
-        vendors: false,
-        vendor: {
-          name: 'vendor',
-          chunks: 'initial',
-          test: /node_modules/,
-          priority: 20,
-        },
-      },
-    },
-  },
-
   plugins: [
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new HtmlWebpackPlugin({
       template: 'index.html',
-      inlineSource: 'runtime.+\\.js',
     }),
-    new InlineSourcePlugin(),
+    new ReactRefreshPlugin(),
   ],
 
   resolve: {
