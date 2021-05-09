@@ -7,6 +7,8 @@ import common from './webpack.common.babel'
 export default merge(common, {
   mode: 'production',
 
+  target: 'browserslist',
+
   devtool: 'source-map',
 
   module: {
