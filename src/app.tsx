@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 
 import Home from 'pages/home'
@@ -14,9 +14,9 @@ function App(): React.ReactElement {
           <title>Hello</title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Helmet>
-        <Switch>
+        <Routes>
           <Route path="/" component={Home} />
-        </Switch>
+        </Routes>
       </div>
     </BrowserRouter>
   )

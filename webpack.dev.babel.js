@@ -21,8 +21,7 @@ export default merge(common, {
   },
 
   devServer: {
-    contentBase: './dist',
-    hot: true,
+    static: './dist',
     historyApiFallback: true,
   },
 
