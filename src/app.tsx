@@ -15,7 +15,7 @@ function App(): React.ReactElement {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Helmet>
         <Routes>
-          <Route path="/" component={Home} />
+          <Route path="/" element={<Home />} />
         </Routes>
       </div>
     </BrowserRouter>
